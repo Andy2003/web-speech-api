@@ -9,9 +9,9 @@ var recognition = new SpeechRecognition();
 // var speechRecognitionList = new SpeechGrammarList();
 // speechRecognitionList.addFromString(grammar, 1);
 // recognition.grammars = speechRecognitionList;
-recognition.continuous = true;
+recognition.continuous = false;
 recognition.lang = 'de-DE';
-recognition.interimResults = true;
+recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 var diagnostic = document.querySelector('.output');
