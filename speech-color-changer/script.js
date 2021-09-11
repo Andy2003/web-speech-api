@@ -2,16 +2,16 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-var colors = [ '1','2', "3"];
-var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
+// var colors = [ '1','2', "3"];
+// var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
 
 var recognition = new SpeechRecognition();
-var speechRecognitionList = new SpeechGrammarList();
-speechRecognitionList.addFromString(grammar, 1);
-recognition.grammars = speechRecognitionList;
-recognition.continuous = false;
+// var speechRecognitionList = new SpeechGrammarList();
+// speechRecognitionList.addFromString(grammar, 1);
+// recognition.grammars = speechRecognitionList;
+recognition.continuous = true;
 recognition.lang = 'de-DE';
-recognition.interimResults = false;
+recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
 var diagnostic = document.querySelector('.output');
