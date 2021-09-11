@@ -30,6 +30,11 @@ document.body.onclick = function() {
   console.log('Ready to receive a color command.');
 }
 
+setTimeout(()=>{
+    recognition.start();
+}, 5000)
+
+
 recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
   // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
