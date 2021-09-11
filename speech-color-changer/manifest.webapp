@@ -11,7 +11,7 @@
     "name": "Chris Mills",
     "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"
   },
-  "default_locale": "en",
+  "default_locale": "de",
   "permissions": {
     "audio-capture" : {
       "description" : "Audio capture"
