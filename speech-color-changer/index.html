@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<h1>Speech color changer 5</h1>
+<h1>Speech color changer 1</h1>
 
 <p class="hints"></p>
 <div>
@@ -26,7 +26,7 @@
     var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
     var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-    var colors = ["fünf", "sechs"];
+    var colors = [1,2,3];
     var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
 
     var recognition = new SpeechRecognition();
@@ -36,7 +36,7 @@
     recognition.continuous = false;
     recognition.lang = 'de-DE';
     recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
+    recognition.maxAlternatives = 3;
 
     var diagnostic = document.querySelector('.output');
     var bg = document.querySelector('html');
@@ -69,9 +69,9 @@
         // The second [0] returns the SpeechRecognitionAlternative at position 0.
         // We then return the transcript property of the SpeechRecognitionAlternative object
         var color = event.results[0][0].transcript;
-        diagnostic.textContent = 'Result received: ' + color + '.';
-        bg.style.backgroundColor = color;
-        console.log('Confidence: ' + event.results[0][0].confidence);
+        diagnostic.textContent = 'Result received: ' + JSON.stringify(event.results) + '.';
+        // bg.style.backgroundColor = color;
+        // console.log('Confidence: ' + event.results[0][0].confidence);
     }
 </script>
 </body>
