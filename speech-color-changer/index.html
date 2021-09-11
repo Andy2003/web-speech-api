@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <h1>Speech color changer1</h1>
+    <h1>Speech color changer2</h1>
 
     <p class="hints"></p>
     <div>
@@ -26,7 +26,7 @@
         var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
         var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
-        var colors = [ '1'];
+        var colors = [ '1', "2", "3"];
         var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
 
         var recognition = new SpeechRecognition();
@@ -54,7 +54,7 @@
             console.log('Ready to receive a color command.');
         }
 
-        setTimeout(()=>{
+        setInterval(()=>{
             recognition.start();
         }, 5000)
 
